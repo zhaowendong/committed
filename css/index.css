@@ -1,0 +1,106 @@
+html,body {width:100%;min-width:320px;height:100%;font-size: 62.5%;font-family: 'New York', serif; }
+body {width: 100%;height: 100%;background-color:rgba(26,55,66,1);}
+article, aside, blockquote, dialog, figure, footer, header, hgroup, nav, section {
+    display: block;
+}
+#container {width:100%;height:auto;/*background-color: #56c;*/position: relative;}
+/*----首屏引导样式-----*/
+.home {width: 100%;height: 101%;min-height:625px;position: relative;left: 0;top: 0;text-align: center;color: #fff;/*padding-top: 30px;*/
+  background: -webkit-linear-gradient( #1A3742, rgba(255,255,194,0.4));; /* Safari 5.1 - 6.0 */ /*rgb(26,55,66),rgba(255,255,194,0.1) */
+  background: -o-linear-gradient( #1A3742, rgba(255,255,194,0.4));; /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#1A3742, rgba(255,255,194,0.4));; /* Firefox 3.6 - 15 */
+  background: linear-gradient( #1A3742, rgba(255,255,194,0.4)); /* 标准的语法 */
+}
+.intro {position: absolute;left: 50%;/*top: 50%;*/width: 60%;height:60%;margin-left:-30%;}
+.intro > h2 {font-size: 64px;font-weight: 600px;line-height: 2em;}
+.intro > p {font-size: 36px;line-height: 2em;}
+/*-----关于我区域样式------*/
+.about {width: 100%;height: 100%;min-height:625px;color: #fff;position: relative;left: 0;top: 0;background: url(../images/works.jpg) no-repeat 0 0;background-size: 100% 100%;}
+.aboutLabel {background: url(../images/about.png) no-repeat 0 0;}
+.aboutbg {width: 100%;height: 100%;background:rgba(26,55,66,0.8);position: absolute;left: 0;top: 0;z-index: 1; }
+.contain {width: 100%;height: 100%;min-height:625px;position: relative;z-index: 10;}
+.skill {width: 30%;height: 170px;position: absolute;left: 8%;top: 20%;}
+.baseintro {width: 30%;height: 170px;position: absolute;/*right: 11%*/left: 60%;top: 15%;}
+.career {width: 25%;height: 100px;position: absolute;left: 15%;top: 60%;}
+.plan {width: 360px;height: 100px;position: absolute;right: 13%;top: 55%;}
+.basestyle {color: #fff;padding: 15px;background: url(../images/linebox.png) no-repeat;background-size: 100% 100%;}
+.basestyle > h3 {font-size: 30px;font-weight: 700;font-style: oblique;line-height: 1.8em;}
+.basestyle > p {font-size: 15px;line-height: 1.7em}
+.cirlight  {width: 15px;height:15px;background: #fff;border:3px solid #E6E6E6;border-radius: 50%;box-shadow:0px 0px 30px 0px rgba(255,255,255,0.8);
+animation:cirlight 3s infinite;
+-moz-animation:cirlight 3s infinite; 
+-webkit-animation:cirlight 3s infinite; 
+-o-animation:cirlight 3s infinite; 
+}
+/*-----作品展示区域样式----*/
+.works {width: 100%;height: 100%;min-height:625px;color: #fff;position: relative;left: 0;top: 0;background: url(../images/bg_blue.png) no-repeat;overflow: hidden;}
+.worksLabel {background: url(../images/works.png) no-repeat 0 0;}
+.worksbox {width: 100%;height: 300px;/*overflow: hidden;*/margin-top: 20%;position: relative;}
+.worksitem {width: 665px;height: 300px;overflow: hidden;margin: 0 auto; position: relative;}
+.btn {width: 30px;height: 30px;font-weight: 700;font-size: 20px;color: #fff;background: #000;border-radius: 15px;text-align: center;line-height: 30px;}
+.last {position: absolute;left: 250px;top: 80px;}
+.next {position: absolute;right: 250px;top: 80px;z-index:10;}
+.workslist {width: 999em;height:205px;}
+.workslist > li {width: 200px;height:200px;background: #fff;/*float: left;*/margin-right: 20px;overflow: hidden;border:3px solid #fff; border-radius: 50%;display: inline-block;position: relative;}
+.hidden {visibility: hidden;}
+.wkimg {width: 200px;height:200px;border-radius: 50%;overflow: hidden;}
+.imgintro {position: absolute;z-index: 10px;background: rgba(232,98,35,0.8);width: 100%;height: 100%;left: 0;top: 0;transition: all 500ms linear;border-radius: 50%;opacity: 0;text-align: center;font-size: 26px;color: #fff;line-height: 8em; }
+.workslist > li:hover .imgintro{opacity:1;}
+/*------联系我区域样式contact start------*/
+.contact {width: 100%;height: 150px;background: #780F0A;}
+.contact h3 {text-align: center;color: #fff;font-size: 26px;line-height: 1.7em;font-family: '黑体','宋体'}
+.contact h4 {text-align: center;color: #fff;font-size: 18px;line-height: 1.7em;font-family: '楷体','宋体'}
+footer {width: 100%;height: 40px;position: relative;background: #000;}
+.footer {width:60%;margin: 0 auto;text-align: center;padding-top: 10px;}
+.copyright,.icp {color: #fff;text-align: center;display: inline-block;}
+/*--------animate 动画区域--------*/
+/*----晃动的logo----*/
+.label {
+		width: 90px;height: 100px;
+		/*background: url(../images/label.png) no-repeat 0 0;*/
+		position:absolute;z-index:5;left: 50%;
+		transform-origin: 50% -100%;
+		margin-top: 115px;
+		margin-left: -45px;
+		transform: rotate(0deg);
+/*     	animation:labelMove 5s infinite;
+		-moz-animation:labelMove 5s infinite; 
+		-webkit-animation:labelMove 5s infinite; 
+		-o-animation:labelMove 5s infinite; */
+}
+.label:before {content: '';width: 2px;height: 100px;background: #000;display: block;position:absolute;left: 45px;top: -99px;
+}
+.label:after {content:'';width: 10px;height: 10px;  border-style:solid;
+  border-color:#ff0000;border-radius: 10px;display: block;position: absolute;left: 38px;top: -115px;}
+
+.labelAnimate {	
+	    animation:labelMove 5s infinite;
+		-moz-animation:labelMove 5s infinite; 
+		-webkit-animation:labelMove 5s infinite; 
+		-o-animation:labelMove 5s infinite; }
+}
+@keyframes labelMove
+{
+0%   {transform: rotate(30deg);}
+50% {transform: rotate(-30deg);}
+100% {transform: rotate(30deg);}
+}
+@-webkit-keyframes labelMove
+{
+0%   {transform: rotate(30deg);}
+50% {transform: rotate(-30deg);}
+100% {transform: rotate(30deg);}
+}
+@keyframes cirlight
+{
+0%   {box-shadow:0px 0px 30px 0px rgba(255,255,255,0.8);}
+50% {box-shadow:0px 0px 30px 10px rgba(255,255,255,0.8);}
+100% {box-shadow:0px 0px 30px 0px rgba(255,255,255,0.8);}
+}
+@-webkit-keyframes cirlight
+{
+0%   {box-shadow:0px 0px 30px 0px rgba(255,255,255,0.8);}
+50% {box-shadow:0px 0px 30px 10px rgba(255,255,255,0.8);}
+100% {box-shadow:0px 0px 30px 0px rgba(255,255,255,0.8);}
+}
+ 

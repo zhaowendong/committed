@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>赵文栋的前端之路</title>
+	<meta content="文栋,前端,前端工程师,zwd" name="first">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="description" content="赵文栋的前端之路" />
+	<link rel="stylesheet" type="text/css" href="css/rest.css">
+	<link rel="stylesheet" type="text/css" href="css/muzo.ui.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<style type="text/css">
+.header {width: 200px;height: 100%;position: fixed;z-index:20;top: 0;right: 0;}
+.navmenu {position: fixed;right: 100px;top: 50px;background: #fff;z-index: 40;}
+.navbox {width: 100%;height: 100%;position: absolute;left: 0;top: 0;background: rgba(0,0,0,0.8);transition: all 600ms linear;transform: rotateY(60deg);transform-origin: 100% 0;opacity: 0;}
+.portrait {width: 100px;height: 100px;background:rgba(212,84,33,0.8);border-radius: 50%;margin: 0 auto; margin-top: 120px;text-align: center;color: #fff;font-size: 24px;line-height: 4em;}
+.intr {font-size: 12px;text-align: center;color: #fff; margin-top: 10px;letter-spacing: 2px;}
+.navlist {width: 100%;text-align: center;font-size: 20px;color: #fff;line-height: 3em;margin-top: 30px;}
+.navlist li {width: 196px;border-top: 2px solid rgba(0,0,0,1);height: 55px;}
+.navlist li:hover {border-right: 6px solid rgba(212,84,33,0.8);cursor: pointer;}
+.lastborder {border-bottom: 2px solid rgba(0,0,0,1);}
+.nav-rotate {transform: rotateY(0deg);opacity: 1;}
+</style>
+</head>
+<body>
+<header class="header">
+	<div class="navmenu menu-trigger">
+		<a href="javascript:;">
+			<span>menu</span>
+		</a>
+	</div>
+<div class="navbox">
+	<h1 class="portrait">ZWD</h1>
+	<h2 class="intr">赵文栋的前端之路</h2>
+	<nav>
+		<ul class="navlist">
+			<li data-nav-val="home">首页</li>
+			<li data-nav-val="works">作品</li>
+			<li data-nav-val="about">关于</li>
+			<li data-nav-val="contact" class="lastborder">联系</li>
+		</ul>		
+	</nav>
+</div>
+</header>
+<div id="container">
+<!-- 首屏引导  start -->
+<div class="home">
+	<div class="intro">
+		<h2>ZWD</h2>
+		<p>hello!欢迎来到我的世界</p>
+		<h2>2016</h2>
+		<p>我在这里，等着你</p>
+	</div>
+	<canvas id="canvasGuide"></canvas>
+</div>
+<!-- 首屏引导  end -->
+<!-- 作品 works start -->
+<div class="works">
+	<div class="label worksLabel labelAnimate"></div>
+	<div class="worksbox">
+        <div class="btn last"> < </div>
+        <div class="btn next"> > </div>
+		<div class="worksitem">
+			<ul class="workslist">
+				<li><a href="3D/demo.html" target="_blank"><img class="wkimg" src=""><div class="imgintro">3D图片轮换</div></a></li>
+				<li><a href="shoufengqin/shoufengqin.html" target="_blank"><img class="wkimg" src=""><div class="imgintro">手风琴运动效果</div></a></li>
+				<li><a href="demo/demo.html" target="_blank"><img class="wkimg" src=""><div class="imgintro">淘宝轮播图</div></a></li>
+				<li><a href="clock/clock.html" target="_blank"><img class="wkimg" src=""><div class="imgintro">数字时钟</div></a></li>
+				<li><a href="fish/fish.html" target="_blank"><img class="wkimg" src=""><div class="imgintro">捕鱼达人-简易版</div></a></li>
+			</ul>			
+		</div>
+	</div>
+</div>
+<!-- 作品 works end -->
+<!-- 关于我 about start -->
+<div class="about">
+	<div class="label aboutLabel labelAnimate"></div>
+	<div class="aboutbg"></div>
+	<div class="contain">
+		<div class="skill basestyle">
+			<h3>职业技能简述</h3>
+			<p> 精通HTML、CSS、Javascript进行web标准开发。了解W3C标准，并能够编写良好的代码，具有手写代码的能力，能够兼容主流的浏览器。
+			</p>
+		</div>
+		<div class="baseintro basestyle">
+			<h3>个人简介</h3>
+			<p> 赵文栋/1983年11月/天蝎座/现居北京<br/> 爱好：看书、休闲游戏<br/> 梦想：让自己的脚步遍布世界的每一个角落。
+			</p>
+		</div>
+		<div class="career basestyle">
+			<h3>职业生涯</h3>
+			<p></p>
+		</div>
+	<!-- 		<div class="plan basestyle">
+			<h3>未来规划</h3>
+			<p></p>
+		</div> -->			
+	</div>
+</div>
+<!-- 关于我 about end -->
+<div class="contact">
+	<h3>联系我</h3>
+	<h4><span>Tel:</span>13811926416</h4>
+	<h4><span>QQ:</span>271440905</h4>
+	<h4><span>E-mail:</span>zhaowendong2008@sina.com</h4>
+</div>
+<div style="clear: both;"></div>
+</div>
+<!-- <footer>
+<div class="footer"></div>
+</footer> -->
+<script type="text/javascript">   
+function Initialize() {
+    canvas.addEventListener("mousemove", MouseMove, false);
+    window.addEventListener("resize", ResizeCanvas, false);
+    setInterval(TimeUpdate, 20);
+    context.beginPath();
+    ResizeCanvas()
+}
+function TimeUpdate(e) {
+    context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    var t, n, r, i = new Array(points.length);
+    for (n = 0; n < particles.length; n++) {
+        i[n] = new Array(particles.length);
+        for (r = 0; r < particles.length; r++) {
+            i[n][r] = 0
+        }
+    }
+    for (var n = 0; n < particles.length; n++) {
+        particles[n].x += particles[n].vx;
+        particles[n].y += particles[n].vy;
+        if (particles[n].x > window.innerWidth) {
+            particles[n].vx = -1 - Math.random()
+        } else if (particles[n].x < 0) {
+            particles[n].vx = 1 + Math.random()
+        } else {
+            particles[n].vx *= 1 + Math.random() * .005
+        }
+
+         if (particles[n].y > window.innerHeight) {
+            particles[n].vy = -1 - Math.random()
+        } else if (particles[n].y < 0) {
+            particles[n].y = window.innerHeight;
+            particles[n].vy = 1
+        } else {
+            particles[n].vy *= 1
+        }
+        context.strokeStyle = particles[n].color;
+        context.beginPath();
+        var s = MAX_DIST_2;
+        particles.forEach(function (e, t) {
+            var r = Math.pow(e.x - particles[n].x, 2) + Math.pow(e.y - particles[n].y, 2);
+            if (r < s && e != particles[n]) s = r;
+            if (e == particles[n] || r > MAX_DIST_2 || i[n][t]) return;
+            context.moveTo(particles[n].x, particles[n].y);
+            var o = particles[n].x > e.x ? particles[n].x : e.x;
+            var u = particles[n].y < e.y ? particles[n].y : e.y;
+            context.quadraticCurveTo(o, u, e.x, e.y);
+            context.strokeStyle = "rgba(249,179,121," + (1 - r / MAX_DIST_2) + " )";
+            i[n][t] = 1;
+            i[t][n] = 1
+        });
+        context.stroke();
+        var o = DistanceBetween(mouse, particles[n]);
+        o = Math.max(Math.min(15 - o / 10, 10), 1);
+        context.fillStyle = particles[n].color;
+        context.beginPath();
+        context.arc(particles[n].x, particles[n].y, particles[n].size * o, 0, Math.PI * 2, true);
+        context.closePath();
+        context.fill()
+    }
+}
+function MouseMove(e) {
+    mouse.x = e.layerX;
+    mouse.y = e.layerY
+}
+function ResizeCanvas(e) {
+    canvas.width = window.innerWidth-10;
+    canvas.height = window.innerHeight-10;
+}
+function DistanceBetween(e, t) {
+    var n = t.x - e.x;
+    var r = t.y - e.y;
+    return Math.sqrt(n * n + r * r)
+}
+var particles = []; 
+var dots = Math.floor(window.innerWidth / 25); 
+for (var i = 0; i < dots; i++) {
+    particles.push({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        vx: 0,
+        vy: -1 * Math.random() - Math.random() - .05,
+        history: [],
+        size: 2,
+        color: "#F9B379"
+    })
+}
+var mouse = {
+    x: 0,
+    y: 0
+};
+var canvas = document.getElementById("canvasGuide");
+var points = [],
+    width = canvas.width,
+    height = canvas.height,
+    intsy;
+var MAX_DIST_2 = 100 * 100;
+var circRadius = 4;
+if (canvas && canvas.getContext) {
+    var context = canvas.getContext("2d");
+    Initialize()
+}
+      </script> 
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

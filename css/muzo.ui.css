@@ -1,0 +1,88 @@
+/*正六边形*/
+.hexagon{  
+    width: 55px;  
+    height: 100px;  
+    background: #058;  
+    position: relative;
+	border:none;
+    margin: 100px; 
+}  
+.hexagon:before {  
+    content: "";  
+    position: absolute;  
+    top:0;  
+    left: -25px;  
+    width: 0;  
+    height: 0;  
+    border-top: 50px solid transparent; 
+    border-right: 25px solid #058; 
+    border-bottom: 50px solid transparent; 
+}  
+.hexagon:after {  
+    content: "";  
+    position: absolute;  
+    bottom:0;  
+    left: 55px;  
+    width: 0;  
+    height: 0;  
+border-top: 50px solid transparent; 
+border-left: 25px solid #058; 
+border-bottom: 50px solid transparent;  
+} 
+/*menu*/
+.menu-trigger {  
+    width: 30px;
+  position:fixed;
+}
+.menu-trigger a {
+    display: block;
+    height: 15px;
+    position: fixed;
+    width: 30px;
+    z-index: 100;
+}
+.menu-trigger a::before, .menu-trigger a::after {
+    background: #fff none repeat scroll 0 0;
+    content: "";
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    text-indent: -9999px;
+    top: 0;
+    transform-origin: 50% 50% 0;
+    transition: transform 0.2s linear 0s;
+    width: 30px;
+}
+.menu-trigger a::after {
+    bottom: 0;
+    left: auto;
+    right: 0;
+    top: auto;
+    transition: width 0.2s linear 0s, transform 0.2s linear 0s;
+    width: 30px;
+}
+.menu-trigger a span {
+    background: #fff none repeat scroll 0 0;
+    display: block;
+    height: 1px;
+    margin-top: -1px;
+    position: absolute;
+    text-indent: -9999em;
+    top: 50%;
+    width: 30px;
+}
+.menu-trigger a.close span {
+    background: transparent none repeat scroll 0 0 !important;
+}
+.menu-trigger a.close::before, .menu-trigger a.close::after {
+    background: #fff none repeat scroll 0 0 !important;
+    top: 7px;
+    width: 30px;
+}
+.menu-trigger a.close::before {
+    transform: rotate(30deg);
+}
+.menu-trigger a.close::after {
+    transform: rotate(-30deg);
+}

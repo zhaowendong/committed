@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社— http://www.zhinengshe.com</title>
+    <style>
+        body{
+            text-align: center;
+            font-size: 80px;
+            background: #000;
+            color:#fff;
+        }
+    </style>
+    <script>
+        //补0
+        function toDou(n) {
+            return n < 10 ? '0' + n : '' + n;
+        }
+        window.onload = function(){
+            var oDiv = document.getElementById('div1');
+            var oDiv2 = document.getElementById('div2');
+
+            function clock(){
+                //获取当前时间
+                var oDate = new Date();
+                var h = oDate.getHours();
+                var m = oDate.getMinutes();
+                var s = oDate.getSeconds();
+
+                var Y = oDate.getFullYear();
+                var M = oDate.getMonth() + 1;
+                var D = oDate.getDate();
+                var W = oDate.getDay();
+
+                //转换 W  星期，为汉字
+                switch (W){
+                    case 1:
+                        W = '一';
+                        break;
+                    case 2:
+                        W = '二';
+                        break;
+                    case 3:
+                        W = '三';
+                        break;
+                    case 4:
+                        W = '四';
+                        break;
+                    case 5:
+                        W = '五';
+                    case 6:
+                        W = '六';
+                        break;
+                    case 0:
+                        W = '日';
+                        break;
+
+                }
+
+                //设置div的内容，并且完成了补0
+                oDiv.innerHTML = toDou(h) + ':' + toDou(m) + ':' + toDou(s);
+                oDiv2.innerHTML = Y + '年'+ M +'月'+ D +'日   星期' + W;
+            }
+            clock();
+            setInterval(clock,1000);
+
+
+        };
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+<div id="div1">11:44:58</div>
+<div id="div2"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
